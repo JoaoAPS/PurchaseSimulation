@@ -1,8 +1,11 @@
+import { useContext } from "react"
 import { useParams, Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
+import CartContext from "../context/CartContext"
 
-function ProductPage(props) {
+function ProductPage() {
   const { id } = useParams()
+  const { cartDispatch } = useContext(CartContext)
   const { data: product, isLoading, error } = useFetch(`products/${id}`)
 
   if (isLoading) return <h2>Loading...</h2>
@@ -15,12 +18,17 @@ function ProductPage(props) {
       </Link>
 
       <h2>{product.title}</h2>
-      <img src={product.image} alt="Image missing" />
+      <img src={product.image} alt={product.title} />
       <p className="product-description">{product.description}</p>
 
       <div className="product-footer">
         <span className="product-price">${product.price}</span>
-        <button className="btn btn-success">Add to Cart</button>
+        <button
+          className="btn btn-success"
+          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: { product } })}
+        >
+          Add to Cart
+        </button>
       </div>
     </div>
   )

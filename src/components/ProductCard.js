@@ -1,6 +1,11 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import CartContext from "../context/CartContext"
 
-function ProductCard({ id, title, image, price }) {
+function ProductCard({ product }) {
+  const { cartDispatch } = useContext(CartContext)
+  const { id, title, image, price } = product
+
   return (
     <article className="product-card">
       <Link to={`/products/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
@@ -9,7 +14,11 @@ function ProductCard({ id, title, image, price }) {
       </Link>
       <div className="product-footer">
         <span className="product-price">${price}</span>
-        <button type="button" className="btn btn-success">
+        <button
+          type="button"
+          className="btn btn-success"
+          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: { product } })}
+        >
           Add to Cart
         </button>
       </div>

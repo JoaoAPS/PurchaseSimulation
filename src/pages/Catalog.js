@@ -11,7 +11,7 @@ function Catalog() {
   return (
     <section className="product-list">
       {products.map(product => (
-        <ProductCard key={product.id} {...product} />
+        <ProductCard key={product.id} product={product} />
       ))}
     </section>
   )

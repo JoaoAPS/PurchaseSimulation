@@ -11,3 +11,72 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#App {
+  background-color: white;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.btn {
+  border-radius: 10% 10%;
+  display: grid;
+  place-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+}
+.btn:hover {
+  box-shadow: 3px 3px 5px lightskyblue;
+  transform: scale(1.1);
+}
+
+.btn-success {
+  background-color: greenyellow;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card {
+  background-color: white;
+  width: 90vw;
+  max-width: 500px;
+  margin: 10px auto;
+  padding: 20px;
+  padding-bottom: 0;
+  border-top: 1px solid #999
+}
+
+.product-card img {
+  display: block;
+  width: 60vw;
+  max-width: 300px;
+  margin: 5px auto;
+}
+
+.product-card h4 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.product-card .product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+.product-card .product-price {
+  color: #222;
+  font-size: 0.9rem;
+}

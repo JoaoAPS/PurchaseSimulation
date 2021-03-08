@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom"
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
 import Catalog from "./pages/Catalog"
 import ProductPage from "./pages/ProductPage"
 
@@ -8,10 +8,14 @@ function App() {
       <div id="App">
         <Switch>
           <Route path="/" exact>
+            <Redirect to="/products" />
+          </Route>
+
+          <Route path="/products" exact>
             <Catalog />
           </Route>
 
-          <Route path="/product/:id" children={<ProductPage />}></Route>
+          <Route path="/products/:id" children={<ProductPage />}></Route>
         </Switch>
       </div>
     </BrowserRouter>

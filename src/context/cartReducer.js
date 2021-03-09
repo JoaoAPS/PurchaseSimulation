@@ -41,6 +41,12 @@ function cartReducer(prev, action) {
     return new_cart
   }
 
+  // Clear the cart
+  if (action.type === "CLEAR_CART") {
+    localStorage.setItem("cart", "[]")
+    return []
+  }
+
   return prev
 }
 

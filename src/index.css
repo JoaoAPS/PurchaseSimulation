@@ -283,3 +283,7 @@ header {
   color: greenyellow;
   margin: 30px 0px;
 }
+
+.thank-you-page .go-back-link {
+  margin-top: 50px;
+}

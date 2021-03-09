@@ -20,7 +20,6 @@ code {
 
 /* Global */
 
-
 #App {
   background-color: white;
   min-width: 100vw;
@@ -29,12 +28,13 @@ code {
 
 .btn {
   border-radius: 10% 10%;
-  display: grid;
+  display: flex;
   place-items: center;
-  padding: 5px 10px;
+  padding: 6px 12px;
   cursor: pointer;
   border: none;
 }
+
 .btn:hover {
   box-shadow: 3px 3px 5px lightskyblue;
   transform: scale(1.1);
@@ -42,6 +42,49 @@ code {
 
 .btn-success {
   background-color: greenyellow;
+}
+
+.btn-primary {
+  background-color: lightskyblue;
+}
+
+.added-to-cart-btn {
+  color: lightskyblue;
+  background-color: white;
+}
+
+.fa-check {
+  margin-right: 3px;
+}
+
+/* Header */
+header {
+  height: 60px;
+  padding: 10px 18px;
+  
+  font-size: 1.3rem;
+  background-color: greenyellow;
+  box-shadow: 1px 0px 1px gray;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-logo {
+  color: black;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-family: 'Pacifico', 'Trebuchet MS', sans-serif;
+}
+
+.left-header {
+  color: #666;
+  text-decoration: none;
+}
+
+.fa-shopping-cart {
+  margin-right: 5px;
 }
 
 
@@ -56,9 +99,9 @@ code {
   width: 90vw;
   max-width: 500px;
   margin: 10px auto;
-  padding: 20px;
-  padding-bottom: 0;
-  border-top: 1px solid #999
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #999
 }
 
 .product-card img,

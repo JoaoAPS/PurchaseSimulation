@@ -7,6 +7,7 @@ import { cartReducer, initialCart } from "./context/cartReducer"
 import Catalog from "./pages/Catalog"
 import ProductPage from "./pages/ProductPage"
 import Cart from "./pages/Cart"
+import ThankYou from "./pages/ThankYou"
 import Header from "./components/Header"
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
             </Route>
 
             <Route path="/products/:id" children={<ProductPage />}></Route>
+
+            <Route path="/thank-you">
+              <ThankYou />
+            </Route>
           </Switch>
         </div>
       </BrowserRouter>

@@ -272,3 +272,14 @@ header {
   color: #222;
   text-decoration: none;
 }
+
+/* Thank You Page */
+.thank-you-page {
+  padding: 10px;
+  text-align: center;
+}
+
+.thank-you-page h2 {
+  color: greenyellow;
+  margin: 30px 0px;
+}

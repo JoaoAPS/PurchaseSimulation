@@ -13,14 +13,15 @@ function cartReducer(prev, action) {
     return new_cart
   }
 
-  // Change the quantity of products in the cart by an amount action.payload.qny_change
+  // Change the quantity of products in the cart by an amount action.payload.qnt_change
   if (action.type === "UPDATE_CART_PRODUCT_QNT") {
     // If the product is not already on the cart, do nothing
-    if (!prev.some(item => item.product.id === action.payload.product.id)) return prev
+    if (!prev.some(item => item.product.id === action.payload.product_id)) return prev
 
     const new_cart = prev.map(item => {
       if (item.product.id === action.payload.product_id) {
-        item.qnt += action.payload.qnt_change
+        let new_qnt = item.qnt + action.payload.qnt_change
+        return { ...item, qnt: new_qnt < 0 ? 0 : new_qnt }
       }
       return item
     })
@@ -32,7 +33,7 @@ function cartReducer(prev, action) {
   // Remove an item from the cart
   if (action.type === "REMOVE_FROM_CART") {
     // If the product is not already on the cart, do nothing
-    if (!prev.some(item => item.product.id === action.payload.product.id)) return prev
+    if (!prev.some(item => item.product.id === action.payload.product_id)) return prev
 
     const new_cart = prev.filter(item => item.product.id !== action.payload.product_id)
 

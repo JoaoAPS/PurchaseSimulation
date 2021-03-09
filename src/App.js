@@ -6,6 +6,7 @@ import { cartReducer, initialCart } from "./context/cartReducer"
 // Components
 import Catalog from "./pages/Catalog"
 import ProductPage from "./pages/ProductPage"
+import Cart from "./pages/Cart"
 import Header from "./components/Header"
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
           <Switch>
             <Route path="/" exact>
               <Redirect to="/products" />
+            </Route>
+
+            <Route path="/cart" exact>
+              <Cart />
             </Route>
 
             <Route path="/products" exact>

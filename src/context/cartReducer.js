@@ -1,5 +1,5 @@
 const localStorageCart = localStorage.getItem("cart")
-const initialCart = localStorageCart ? localStorageCart : []
+const initialCart = localStorageCart ? JSON.parse(localStorageCart) : []
 
 function cartReducer(prev, action) {
   // Add an item to the cart
@@ -9,7 +9,7 @@ function cartReducer(prev, action) {
 
     const new_cart = [...prev, { product: action.payload.product, qnt: 1 }]
 
-    localStorage.setItem("cart", new_cart)
+    localStorage.setItem("cart", JSON.stringify(new_cart))
     return new_cart
   }
 
@@ -25,7 +25,7 @@ function cartReducer(prev, action) {
       return item
     })
 
-    localStorage.setItem("cart", new_cart)
+    localStorage.setItem("cart", JSON.stringify(new_cart))
     return new_cart
   }
 
@@ -36,7 +36,7 @@ function cartReducer(prev, action) {
 
     const new_cart = prev.filter(item => item.product.id !== action.payload.product_id)
 
-    localStorage.setItem("cart", new_cart)
+    localStorage.setItem("cart", JSON.stringify(new_cart))
     return new_cart
   }
 

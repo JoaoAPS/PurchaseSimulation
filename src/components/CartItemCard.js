@@ -13,6 +13,7 @@ function CartItemCard({ item }) {
 
       <span className="product-price">${item.product.price.toFixed(2)}</span>
 
+      {/* Remove icon */}
       <ConfirmRemovePopup
         trigger={<i className="fas fa-trash"></i>}
         handleConfirm={() =>
@@ -22,7 +23,8 @@ function CartItemCard({ item }) {
 
       {/* Quantity changer */}
       <div className="item-qnt-manager">
-        {item.qnt == 1 ? (
+        {/* Show confirmation modal if decreasing the quantity will remove the item */}
+        {item.qnt === 1 ? (
           <ConfirmRemovePopup
             trigger={<i className="fas fa-arrow-left"></i>}
             handleConfirm={() =>
@@ -40,7 +42,9 @@ function CartItemCard({ item }) {
             }
           ></i>
         )}
+
         <span className="item-qnt">{item.qnt}</span>
+
         <i
           className="fas fa-arrow-right"
           onClick={() =>
@@ -57,6 +61,7 @@ function CartItemCard({ item }) {
   )
 }
 
+// Popup to confirm removing item
 const ConfirmRemovePopup = ({ trigger, handleConfirm }) => (
   <Popup trigger={trigger} modal nested>
     {close => (

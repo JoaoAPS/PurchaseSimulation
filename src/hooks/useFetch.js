@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import api from "../API"
 
+// This hook fetches data and informs if it is loading and if errors occoured
 function useFetch(url) {
   const [data, setData] = useState(null)
   const [isLoading, setIsLoading] = useState(true)

@@ -10,6 +10,7 @@ function ProductCard({ product }) {
         <img src={image} alt={title} />
         <h4>{title}</h4>
       </Link>
+
       <div className="product-footer">
         <span className="product-price">${price.toFixed(2)}</span>
 

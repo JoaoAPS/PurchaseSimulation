@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import CartContext from "../context/CartContext"
 import CartItemCard from "../components/CartItemCard"
 
-function Cart(props) {
+function Cart() {
   const { cart } = useContext(CartContext)
 
   const cartEmpty = () => (

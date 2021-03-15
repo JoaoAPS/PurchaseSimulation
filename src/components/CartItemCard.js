@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import Popup from "reactjs-popup"
 import CartContext from "../context/CartContext"
 
 function CartItemCard({ item }) {
@@ -12,24 +13,33 @@ function CartItemCard({ item }) {
 
       <span className="product-price">${item.product.price}</span>
 
-      <i
-        className="fas fa-trash"
-        onClick={() =>
+      <ConfirmRemovePopup
+        trigger={<i className="fas fa-trash"></i>}
+        handleConfirm={() =>
           cartDispatch({ type: "REMOVE_FROM_CART", payload: { product_id: item.product.id } })
         }
-      ></i>
+      />
 
       {/* Quantity changer */}
       <div className="item-qnt-manager">
-        <i
-          className="fas fa-arrow-left"
-          onClick={() =>
-            cartDispatch({
-              type: "UPDATE_CART_PRODUCT_QNT",
-              payload: { product_id: item.product.id, qnt_change: -1 },
-            })
-          }
-        ></i>
+        {item.qnt == 1 ? (
+          <ConfirmRemovePopup
+            trigger={<i className="fas fa-arrow-left"></i>}
+            handleConfirm={() =>
+              cartDispatch({ type: "REMOVE_FROM_CART", payload: { product_id: item.product.id } })
+            }
+          />
+        ) : (
+          <i
+            className="fas fa-arrow-left"
+            onClick={() =>
+              cartDispatch({
+                type: "UPDATE_CART_PRODUCT_QNT",
+                payload: { product_id: item.product.id, qnt_change: -1 },
+              })
+            }
+          ></i>
+        )}
         <span className="item-qnt">{item.qnt}</span>
         <i
           className="fas fa-arrow-right"
@@ -46,5 +56,22 @@ function CartItemCard({ item }) {
     </div>
   )
 }
+
+const ConfirmRemovePopup = ({ trigger, handleConfirm }) => (
+  <Popup trigger={trigger} modal nested>
+    {close => (
+      <div className="confirm-modal">
+        <h3>Remove item from the cart?</h3>
+
+        <button className="btn btn-primary" onClick={handleConfirm}>
+          Remove it
+        </button>
+        <button className="btn btn-danger" onClick={close}>
+          Cancel
+        </button>
+      </div>
+    )}
+  </Popup>
+)
 
 export default CartItemCard

@@ -27,12 +27,17 @@ code {
 }
 
 .btn {
-  border-radius: 10% 10%;
-  display: flex;
-  place-items: center;
   padding: 6px 12px;
-  cursor: pointer;
+  border-radius: 8px 8px;
   border: none;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  font-weight: 700;
+  color: black;
 }
 
 .btn:hover {
@@ -46,6 +51,10 @@ code {
 
 .btn-primary {
   background-color: lightskyblue;
+}
+
+.btn-danger {
+  background-color: pink;
 }
 
 .added-to-cart-btn {
@@ -271,6 +280,35 @@ header {
   font-size: 1.1rem;
   color: #222;
   text-decoration: none;
+}
+
+.popup-content {
+  width: 80vw;
+  padding: 10px 15px;
+}
+
+.confirm-modal{
+  width: 100%;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  
+  display: flex;
+  flex-direction: column;
+  
+  text-align: center;
+}
+
+.confirm-modal h3 {
+  margin-top: 15px;
+  margin-bottom: auto;
+}
+
+.confirm-modal .btn {
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 /* Thank You Page */

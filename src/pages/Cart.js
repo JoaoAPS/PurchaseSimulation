@@ -27,7 +27,7 @@ function Cart() {
         </div>
 
         <h3 className="cart-total">
-          Total: <span className="total-price">${totalPrice}</span>
+          Total: <span className="total-price">${totalPrice.toFixed(2)}</span>
         </h3>
 
         <Link to="/thank-you" className="btn btn-success finish-btn">

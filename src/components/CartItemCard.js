@@ -11,7 +11,7 @@ function CartItemCard({ item }) {
 
       <p className="product-title">{item.product.title}</p>
 
-      <span className="product-price">${item.product.price}</span>
+      <span className="product-price">${item.product.price.toFixed(2)}</span>
 
       <ConfirmRemovePopup
         trigger={<i className="fas fa-trash"></i>}
@@ -52,7 +52,7 @@ function CartItemCard({ item }) {
         ></i>
       </div>
 
-      <span className="total-item-price">${item.qnt * item.product.price}</span>
+      <span className="total-item-price">${(item.qnt * item.product.price).toFixed(2)}</span>
     </div>
   )
 }

@@ -11,7 +11,7 @@ function ProductCard({ product }) {
         <h4>{title}</h4>
       </Link>
       <div className="product-footer">
-        <span className="product-price">${price}</span>
+        <span className="product-price">${price.toFixed(2)}</span>
 
         <AddToCartButton id={id} product={product} />
       </div>

@@ -9,6 +9,7 @@ import ProductPage from "./pages/ProductPage"
 import Cart from "./pages/Cart"
 import ThankYou from "./pages/ThankYou"
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 
 function App() {
   const [cart, cartDispatch] = React.useReducer(cartReducer, initialCart)
@@ -38,6 +39,8 @@ function App() {
               <ThankYou />
             </Route>
           </Switch>
+
+          <Footer />
         </div>
       </BrowserRouter>
     </CartContext.Provider>

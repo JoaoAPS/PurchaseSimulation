@@ -7,13 +7,15 @@ function useFetch(url) {
   const [error, setError] = useState(false)
 
   async function fetchData(target_url) {
-    const res = await api.get(target_url)
+    await api
+      .get(target_url)
+      .then(res => {
+        setData(res.data)
+      })
+      .catch(error => {
+        setError(error.message || true)
+      })
 
-    if (res.status >= 200 && res.status < 300) {
-      setData(res.data)
-    } else {
-      setError(true)
-    }
     setIsLoading(false)
   }
 

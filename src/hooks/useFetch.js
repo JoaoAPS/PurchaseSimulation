@@ -9,8 +9,6 @@ function useFetch(url) {
   async function fetchData(target_url) {
     const res = await api.get(target_url)
 
-    console.log(res.data)
-
     if (res.status >= 200 && res.status < 300) {
       setData(res.data)
     } else {

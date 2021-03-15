@@ -1,11 +1,9 @@
-import { useContext } from "react"
 import { useParams, Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
-import CartContext from "../context/CartContext"
+import AddToCartButton from "../components/AddToCartButton"
 
 function ProductPage() {
   const { id } = useParams()
-  const { cartDispatch } = useContext(CartContext)
   const { data: product, isLoading, error } = useFetch(`products/${id}`)
 
   if (isLoading) return <h2>Loading...</h2>
@@ -23,12 +21,7 @@ function ProductPage() {
 
       <div className="product-footer">
         <span className="product-price">${product.price}</span>
-        <button
-          className="btn btn-success"
-          onClick={() => cartDispatch({ type: "ADD_TO_CART", payload: { product } })}
-        >
-          Add to Cart
-        </button>
+        <AddToCartButton id={parseInt(id)} product={product} />
       </div>
     </div>
   )

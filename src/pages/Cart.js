@@ -30,7 +30,7 @@ const CartNotEmpty = ({ cart }) => {
   const totalPrice = cart.reduce((total, item) => total + item.qnt * item.product.price, 0)
 
   return (
-    <>
+    <div className="cart-page">
       <div className="cart-item-list">
         {cart.map(item => (
           <CartItemCard item={item} key={item.product.id} />
@@ -44,7 +44,7 @@ const CartNotEmpty = ({ cart }) => {
       <Link to="/thank-you" className="btn btn-success finish-btn">
         Finish Order
       </Link>
-    </>
+    </div>
   )
 }
 

@@ -116,4 +116,48 @@
     .product-page .product-footer .product-price {
         font-size: 1.6rem;
     }
+    
+    /* Cart Page */
+    .cart-page {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cart-page .cart-item-list {
+        margin-bottom: 60px
+    }
+    
+    .cart-page .cart-item {
+        max-width: 1000px;
+    }
+    
+    .cart-page .cart-total {
+        float: left;
+        clear: left;
+    }
+    
+    .cart-page .finish-btn {
+        float: right;
+        clear: right;
+        max-width: 200px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Clearfix */
+    .cart-page::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    
+    .popup-content {
+        max-width: 600px;
+    }
+    
+    .confirm-modal .btn {
+        margin-right: 40px;
+        margin-left: 40px;
+    }
 }

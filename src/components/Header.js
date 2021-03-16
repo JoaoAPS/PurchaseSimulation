@@ -11,7 +11,7 @@ function Header() {
         My Site
       </Link>
 
-      <Link to="/cart" className="left-header">
+      <Link to="/cart" className="right-header">
         <i className="fas fa-shopping-cart"></i>
         <span>{cart.length}</span>
       </Link>

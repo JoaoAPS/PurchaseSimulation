@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer>
       <span>My Site</span>
-      <span>&copy; Copyright 2021</span>
+      <span>&copy; Copyright {new Date().getFullYear()}</span>
     </footer>
   )
 }

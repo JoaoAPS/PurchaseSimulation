@@ -6,7 +6,11 @@ function ProductCard({ product }) {
 
   return (
     <article className="product-card">
-      <Link to={`/products/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
+      <Link
+        to={`/products/${id}`}
+        style={{ textDecoration: "none", color: "inherit" }}
+        className="product-main"
+      >
         <img src={image} alt={title} />
         <h4>{title}</h4>
       </Link>

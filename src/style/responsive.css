@@ -1,0 +1,80 @@
+@media (min-width: 700px) {
+
+    /* Header */
+    header {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    /* Footer */
+    #App {
+        position: relative;
+        margin-bottom: -80px;
+        padding-bottom: 40px;
+    }
+    
+    footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding-right: 150px;
+        padding-left: 150px;
+    }
+    
+    /* Product Catalog Page */
+    .product-list {
+        max-width: 1200px;
+        margin: 30px auto;
+        
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .product-card {
+        width: 200px;
+        height: 400px;
+        margin: 40px 25px 30px 25px;
+        padding-bottom: 5px;
+        border-bottom: none;
+        
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+
+    .product-card .product-main {
+        grid-row: 1 / 2;
+        
+        display: grid;
+        grid-template-rows: 1fr auto;
+        place-items: center;
+    }
+    
+    .product-card img {
+        width: 100%;
+        height: auto;
+        grid-row: 1 / 2;
+    }
+
+    .product-card h4 {
+        padding-top: 5px;
+        font-size: 0.8rem;
+        font-weight: normal;
+        grid-row: 2 / 3;
+    }
+    
+    .product-card .product-footer {
+        margin: 0;
+        grid-row: 2 / 3;
+        padding-top: 10px;
+    }
+    
+    .product-card .product-footer .btn {
+        font-size: 0.8rem;
+    }
+    
+    .product-card .product-footer .product-price {
+        font-size: 1rem;
+    }
+    
+}

@@ -10,4 +10,4 @@ Clone the repo and cd into it.
 
 To get the development workspace, run `yarn install && yarn start` or `npm install && npm start`.
 
-The app should automatically open on [http://localhost:3000].
+The app should automatically open on [http://localhost:3000](localhost:3000).

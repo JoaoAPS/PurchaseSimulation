@@ -371,10 +371,10 @@ footer {
 
 @keyframes fade-in-out {
   from {
-    opacity: 0%;
+    opacity: 0;
   }
   to {
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
@@ -387,7 +387,6 @@ footer {
 .loading-spinner-container {
   width: 100px;
   height: 100px;
-  background-color: none;
   border-radius: 50% 50%;
   animation: spin infinite 2s linear, fade-in-out infinite alternate 2s;
   position: relative;

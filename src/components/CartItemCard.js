@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import { Link } from "react-router-dom"
 import Popup from "reactjs-popup"
 import CartContext from "../context/CartContext"
 
@@ -7,9 +8,13 @@ function CartItemCard({ item }) {
 
   return (
     <div className="cart-item">
-      <img src={item.product.image} alt={item.product.title} />
+      <Link to={`products/${item.product.id}`} className="cart-item-img">
+        <img src={item.product.image} alt={item.product.title} />
+      </Link>
 
-      <p className="product-title">{item.product.title}</p>
+      <Link to={`products/${item.product.id}`} className="product-title">
+        <p>{item.product.title}</p>
+      </Link>
 
       <span className="product-price">${item.product.price.toFixed(2)}</span>
 
@@ -68,12 +73,14 @@ const ConfirmRemovePopup = ({ trigger, handleConfirm }) => (
       <div className="confirm-modal">
         <h3>Remove item from the cart?</h3>
 
-        <button className="btn btn-primary" onClick={handleConfirm}>
-          Remove it
-        </button>
-        <button className="btn btn-danger" onClick={close}>
-          Cancel
-        </button>
+        <div className="btn-container">
+          <button className="btn btn-danger" onClick={handleConfirm}>
+            Remove it
+          </button>
+          <button className="btn btn" onClick={close}>
+            Cancel
+          </button>
+        </div>
       </div>
     )}
   </Popup>

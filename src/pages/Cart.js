@@ -17,12 +17,12 @@ function Cart() {
 
 // Shown when there are no items in the cart
 const CartEmpty = () => (
-  <>
-    <p>It seems yout cart is empty.</p>
+  <div className="container" style={{ marginTop: "60px" }}>
+    <p style={{ marginBottom: "20px", fontSize: "1.4rem" }}>It seems your cart is empty.</p>
     <Link to="/products" className="go-back-link">
       &#8592; Go back shopping
     </Link>
-  </>
+  </div>
 )
 
 // Shown when there are items in the cart

@@ -6,7 +6,7 @@ It uses the [Fake Store API](https://fakestoreapi.com) to get mock products.
 
 ## Demo
 
-A live demo of the app can be accessed on Netlify: [https://youthful-dijkstra-9ad9d9.netlify.app]
+A live demo of the app can be accessed on Netlify: https://youthful-dijkstra-9ad9d9.netlify.app
 
 ## Instalation
 

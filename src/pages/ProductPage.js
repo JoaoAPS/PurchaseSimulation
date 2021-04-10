@@ -16,12 +16,12 @@ function ProductPage() {
         &#8592; Back to catalog
       </Link>
 
-      <h2>{product.title}</h2>
+      <h2 style={{ marginTop: "50px" }}>{product.title}</h2>
       <img src={product.image} alt={product.title} />
       <p className="product-description">{product.description}</p>
 
       <div className="product-footer">
-        <span className="product-price">${product.price}</span>
+        <span className="product-price">${product.price.toFixed(2)}</span>
         <AddToCartButton id={parseInt(id)} product={product} />
       </div>
     </div>

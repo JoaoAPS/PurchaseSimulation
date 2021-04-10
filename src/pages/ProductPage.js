@@ -1,13 +1,14 @@
 import { useParams, Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import AddToCartButton from "../components/AddToCartButton"
+import LoadingIcon from "../components/LoadingIcon"
 
 function ProductPage() {
   const { id } = useParams()
   const { data: product, isLoading, error } = useFetch(`products/${id}`)
 
-  if (isLoading) return <h2>Loading...</h2>
-  if (error) return <h2>Error fetch product data!</h2>
+  if (isLoading) return <LoadingIcon />
+  if (error) return <h2>Error fetching product data!</h2>
 
   return (
     <div className="product-page">

@@ -70,6 +70,13 @@ code {
   margin-right: 3px;
 }
 
+.container {
+  width: 100vw;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
 /* Header */
 header {
   height: 60px;
@@ -341,4 +348,72 @@ footer {
 
 .thank-you-page .go-back-link {
   margin-top: 50px;
+}
+
+/* Loading Icon */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-out {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.loading-page-container {
+  min-height: 400px;
+  display: grid;
+  place-items: center;
+}
+
+.loading-spinner-container {
+  width: 100px;
+  height: 100px;
+  background-color: none;
+  border-radius: 50% 50%;
+  animation: spin infinite 2s linear, fade-in-out infinite alternate 2s;
+  position: relative;
+}
+
+.loading-spinner {
+  width: 15px;
+  height: 15px;
+  background-color: #222;
+  border-radius: 50% 50%;
+  
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.loading-spinner::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #222;
+  border-radius: 50% 50%;
+  transform: translate(-100%, 50%);
+  animation: fade-in-out infinite alternate 2s;
+}
+
+.loading-spinner::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #222;
+  border-radius: 50% 50%;
+  transform: translate(100%, -50%);
+  animation: fade-in-out infinite alternate 2s;
 }

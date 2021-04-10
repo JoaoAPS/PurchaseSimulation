@@ -4,6 +4,10 @@ This is a React app that implements the flow of browsing items, adding them to a
 
 It uses the [Fake Store API](https://fakestoreapi.com) to get mock products.
 
+## Demo
+
+A live demo of the app can be accessed on Netlify: [https://youthful-dijkstra-9ad9d9.netlify.app]
+
 ## Instalation
 
 Clone the repo and cd into it.
